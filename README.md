@@ -21,33 +21,56 @@ or
 modify mock.bat, change the path of mock-fc.jar to where it is
 
 ## Usage
-<mock data > 表示 mock数据文件名， 例如 taro-shop.json 或者带目录 mock/taro-shop.json
+ `<mock data>` 表示 mock数据文件名， 例如 taro-shop.json 或者带目录 mock/taro-shop.json
 
  生成schema，并启动本地graphql server
-  mock <mock data> 
+
+     mock <mock data>
+
  生成增强模式的schema,并启动 graphql server
-  mock -e <mock data> 
+
+     mock -e <mock data>
+
  增强模式下,还可以增加token 进行访问控制
-  mock -e <mock data> <token config> 
- 跳过生成schema，直接启动本地graphql server 
-  mock -s <mock data>     仍使用mock data, 如果之前有db，会被覆盖
-  mock -s -f <mock data>  直接用当前fcdb，不使用mock data
+
+     mock -e <mock data> <token config>
+
+ 跳过生成schema，直接启动本地graphql server
+
+     mock -s <mock data>     仍使用mock data, 如果之前有db，会被覆盖
+     mock -s -f <mock data>  直接用当前fcdb，不使用mock data
+
  只生成schema，不启动graphql server
-  mock -b <mock data>
- 部署到腾讯云 
-  mock -d <mock data>
+
+      mock -b <mock data>
+
+ 部署到腾讯云
+
+     mock -d <mock data>
+
  升级腾讯云上的serverless （函数服务）
-  mock -u <mock data>
+
+     mock -u <mock data>
+
  Import data which export from db
-  mock -i <data directory> <output file>
+
+     mock -i <data directory> <output file>
+
  Import csv data with field type parse (support GBK encode)
-  mock -i csv-file <output file> field1 type1 field2 type2  
+
+     mock -i csv-file <output file> field1 type1 field2 type2
+
  zero code 构建查询 (question) 注意: 如果尚未创建schema, 需要先 build (-b)
-  mock -r <mock data>  
+
+     mock -r <mock data>
+
  复制fc db 到 edn 数据文件, 当insert 的数据需要保留时，会用到这个功能
-  mock -c <db file> <output edn file>
+
+     mock -c <db file> <output edn file>
+
  复制edn 数据到mongodb
-  mock -c -m <edn file>
+
+    mock -c -m <edn file>
 
 ## Examples
 
